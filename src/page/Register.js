@@ -37,7 +37,7 @@ class Register extends Component {
                 Swal.fire('Oops...', this.props.message, 'error')
             }
             else {
-                await Swal.fire(response.data.message, 'success')
+                await Swal.fire(response.data.message)
                 await this.props.history.replace({ pathname: '/' });
             }
 

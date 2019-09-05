@@ -80,3 +80,17 @@
     font-weight: 400;
 }
 
+.text-welcome{
+    font-family: $font-en;
+    font-size: 1rem;
+    font-weight: 400;
+    color: black !important;
+}
+
+.text-logout{
+    color: $primaryColor
+}
+
+.text-:hover{
+    color: $primaryHoverColor
+}
