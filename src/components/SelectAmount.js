@@ -22,6 +22,7 @@ export default class SelectAmount extends Component {
                             <FormControl
                                 placeholder="ผู้เข้าพัก"
                                 type="number"
+                                min="1"
                             />
                         </InputGroup>
                     </div>

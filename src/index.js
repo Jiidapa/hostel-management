@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import "react-datepicker/dist/react-datepicker.css";
 import 'react-dates/lib/css/_datepicker.css';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

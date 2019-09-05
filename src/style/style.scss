@@ -13,3 +13,13 @@
         font-size: 1rem;
     }
 }
+
+#SearchHostel .bg-btn-primary {
+    background-color: $primaryColor;
+    border: 1px solid $primaryColor;
+}
+
+#SearchHostel .bg-btn-primary:hover {
+    background-color: $primaryHoverColor;
+    border: 1px solid $primaryHoverColor;
+}
