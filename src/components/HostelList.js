@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 import '../style/style.scss';
@@ -8,7 +7,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import { addHostel } from '../redux/actions/registerHostelAction';
 
 library.add(fab, fas);
 
@@ -42,7 +40,6 @@ class HostelList extends Component {
 
     componentDidMount() {
         this.getData();
-        this.props.dispatch(addHostel(this.state.hts, this.props.hostels));
     }
 
     componentWillUnmount() {
@@ -115,11 +112,4 @@ class HostelList extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        message: state.bookingReducer.message,
-        hostels: state.bookingReducer.hostels
-    }
-}
-
-export default connect(mapStateToProps)(HostelList);
+export default HostelList;

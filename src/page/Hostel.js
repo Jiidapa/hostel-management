@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
 import { Carousel, Card, Form, InputGroup, FormControl } from 'react-bootstrap';
 import '../style/style.scss';
-import { addBooking } from '../redux/actions/bookingAction';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -55,7 +53,6 @@ class Hostel extends Component {
             price: hostel.price,
             amount: this.state.amountValue
         }
-        this.props.dispatch(addBooking(item, this.props.hostels));
     }
 
     render() {
@@ -168,15 +165,8 @@ class Hostel extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        message: state.bookingReducer.message,
-        available: state.bookingReducer.available,
-        hostels: state.bookingReducer.hostels
-    }
-}
 
-export default connect(mapStateToProps)(Hostel);
+export default Hostel;
 
 const styles = {
     heightLabel: {
