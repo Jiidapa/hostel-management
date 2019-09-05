@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card } from 'react-bootstrap';
-import { addUser } from '../redux/actions/reducerAction';
+import { addUser } from '../redux/actions/registerAction';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
@@ -29,7 +29,7 @@ const RegisterSchema = Yup.object().shape({
 class Register extends Component {
     reguster = async (values) => {
         try {
-            const apiUrl = 'https://543dba8d-6ff9-43d6-924b-e379a738cdfe.mock.pstmn.io/register';
+            const apiUrl = 'https://6d777be4-93ea-4ec2-8335-ffd0777cd339.mock.pstmn.io/register';
             const response = await axios.post(apiUrl, values);
             this.props.dispatch(addUser(values, this.props.users));
 

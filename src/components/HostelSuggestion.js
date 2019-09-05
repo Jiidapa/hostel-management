@@ -18,7 +18,7 @@ export default class HostelSuggestion extends Component {
   }
   getHostel = async () => {
     try {
-      const response = await axios.get('https://543dba8d-6ff9-43d6-924b-e379a738cdfe.mock.pstmn.io/hostel', {
+      const response = await axios.get('https://6d777be4-93ea-4ec2-8335-ffd0777cd339.mock.pstmn.io/hostel', {
         cancelToken: this.source.token
       });
 

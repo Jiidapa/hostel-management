@@ -1,11 +1,11 @@
-import { ADD_USER } from '../actions/reducerAction';
+import { ADD_USER } from '../actions/registerAction';
 
 const initState = {
     users: [],
     message: ''
 }
 
-const registerReducer = (state = initState, action) => {
+const cartReducer = (state = initState, action) => {
     switch (action.type) {
         case ADD_USER:
             return {
@@ -17,4 +17,4 @@ const registerReducer = (state = initState, action) => {
     }
 }
 
-export default registerReducer 
+export default cartReducer 

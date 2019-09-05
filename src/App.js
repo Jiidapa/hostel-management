@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './page/Home';
 import Register from './page/Register';
+import Hostel from './page/Hostel';
 import NotFound from './page/NotFound.js';
 
 const { store, persistor } = configureStore();
@@ -23,6 +24,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/register" component={Register} />
+              <Route path="/hostel/:id" component={Hostel} />
               <Route component={NotFound} />
             </Switch>
           </div>

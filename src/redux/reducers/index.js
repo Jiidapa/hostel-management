@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import registerReducer from './registerReducer'
+import registerReducer from './registerReducer';
+import bookingReducer from './bookingReducer';
 //list reducer
 const rootReducer = combineReducers({
-    registerReducer
+    registerReducer,
+    bookingReducer
 })
 
 export default rootReducer

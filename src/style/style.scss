@@ -97,12 +97,21 @@
 
 .btn-booking{
     background-color: $bookingColor;
+    border: 1px solid $bookingColor;
     color: white;
     font-family: $font-en;
 }
 
 .btn-booking:hover{
     background-color: $bookingHoverColor;
+    border: 1px solid $bookingHoverColor;
+    color: white;
+    font-family: $font-en;
+}
+
+.btn-booking:hover{
+    background-color: $bookingHoverColor;
+    border: 1px solid $bookingHoverColor;
     color: white;
     font-family: $font-en;
 }
@@ -119,4 +128,17 @@
 .text-link-map:hover {
     color: rgb(107, 107, 107);
     text-decoration: none;
+}
+
+.size-img-hostel{
+    width: 10rem;
+    height: 350px;
+    object-fit: cover;
+}
+
+.text-topic-hostel{
+    font-family: $font-en;
+    color: $bookingColor;
+    font-weight: 600;
+    font-size: 2rem;
 }

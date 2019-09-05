@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 import '../style/style.scss';
@@ -7,24 +8,25 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import { addHostel } from '../redux/actions/registerHostelAction';
 
 library.add(fab, fas);
 
-export default class HostelList extends Component {
+class HostelList extends Component {
     CancelToken = axios.CancelToken;
     source = this.CancelToken.source();
     state = {
-        hostels: [],
+        hts: [],
         loading: true
     }
 
     async getData() {
         try {
-            const response = await axios.get('https://543dba8d-6ff9-43d6-924b-e379a738cdfe.mock.pstmn.io/hostel', {
+            const response = await axios.get('https://6d777be4-93ea-4ec2-8335-ffd0777cd339.mock.pstmn.io/hostel', {
                 cancelToken: this.source.token
             });
             this.setState({
-                hostels: response.data,
+                hts: response.data,
                 loading: false
             });
         }
@@ -40,6 +42,7 @@ export default class HostelList extends Component {
 
     componentDidMount() {
         this.getData();
+        this.props.dispatch(addHostel(this.state.hts, this.props.hostels));
     }
 
     componentWillUnmount() {
@@ -61,7 +64,7 @@ export default class HostelList extends Component {
                 </div>
                 <div className="row my-4">
                     {
-                        this.state.hostels.map((hostel) => {
+                        this.state.hts.map((hostel) => {
                             return (
                                 <div className="col-md-4" key={hostel.id}>
                                     <div className="card mb-3">
@@ -85,7 +88,7 @@ export default class HostelList extends Component {
                                                     </div>
                                                     <div className="row">
                                                         <div className="col-md-12">
-                                                            {hostel.available} ห้อง
+                                                        {hostel.available} ห้อง
                                                         </div>
                                                     </div>
                                                 </div>
@@ -94,7 +97,7 @@ export default class HostelList extends Component {
                                                 <div className="col-md-12">
                                                     <Link className="btn btn-booking w-100"
                                                         to={
-                                                            { pathname: '/shop/' + hostel.id }
+                                                            { pathname: '/hostel/' + hostel.id }
                                                         }>
                                                         View Room
                                                     </Link>
@@ -111,3 +114,12 @@ export default class HostelList extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        message: state.bookingReducer.message,
+        hostels: state.bookingReducer.hostels
+    }
+}
+
+export default connect(mapStateToProps)(HostelList);
