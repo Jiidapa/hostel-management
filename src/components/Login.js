@@ -123,7 +123,7 @@ class Login extends Component {
 
                                                 <button
                                                     type="submit"
-                                                    className="btn btn-info btn-sm my-2 my-sm-0"
+                                                    className="btn btn-booking btn-sm my-2 my-sm-0"
                                                     disabled={isSubmitting}
                                                 >
                                                     Log In

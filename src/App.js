@@ -26,6 +26,7 @@ function App() {
               <Route component={NotFound} />
             </Switch>
           </div>
+          <div style={{marginTop: '5rem'}}></div>
           <Footer />
         </Router>
       </PersistGate>

@@ -94,3 +94,29 @@
 .text-:hover{
     color: $primaryHoverColor
 }
+
+.btn-booking{
+    background-color: $bookingColor;
+    color: white;
+    font-family: $font-en;
+}
+
+.btn-booking:hover{
+    background-color: $bookingHoverColor;
+    color: white;
+    font-family: $font-en;
+}
+
+.text-card-title{
+    font-family: $font-en;
+    color: $bookingColor;
+    font-weight: 600;
+}
+
+.text-link-map{
+    color: black;
+}
+.text-link-map:hover {
+    color: rgb(107, 107, 107);
+    text-decoration: none;
+}
