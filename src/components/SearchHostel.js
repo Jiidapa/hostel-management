@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Form, ButtonToolbar, Button, InputGroup } from 'react-bootstrap';
+import { Card, Form, InputGroup } from 'react-bootstrap';
 import Calendar from './Calendar';
 import SelectAmount from './SelectAmount';
 import HostelSuggestion from './HostelSuggestion';

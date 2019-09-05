@@ -1,9 +1,22 @@
 @import './color', './text';
 
 #NavBar .text-navbar-brand{
-    font-family: $font-en2;
+    font-family: $font-en;
     font-weight: 500;
     font-size: 1.3rem;
+    color: black;
+}
+
+#NavBar .text-navbar-brand:hover{
+    font-family: $font-en;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: rgb(75, 75, 75);
+    text-decoration: none
+}
+
+#NavBar .row{
+    margin-right: 0;
 }
 
 @media (max-width: '320px'){
@@ -14,12 +27,56 @@
     }
 }
 
-#SearchHostel .bg-btn-primary {
-    background-color: $primaryColor;
-    border: 1px solid $primaryColor;
+@media (max-width: '991px'){
+    .navbar-toggler{
+        float: right;
+    }
 }
 
-#SearchHostel .bg-btn-primary:hover {
+.bg-btn-primary {
+    background-color: $primaryColor;
+    border: 1px solid $primaryColor;
+    color: white;
+    font-family: $font-en;
+}
+
+.bg-btn-primary:hover {
     background-color: $primaryHoverColor;
     border: 1px solid $primaryHoverColor;
+    color: white;
+    font-family: $font-en;
 }
+
+.text-label {
+    font-family: $font-en;
+    font-size: 0.8rem;
+    margin-bottom: -1rem;
+    color: $HeaderColor;
+    font-weight: 500;
+}
+
+.text-topic {
+    font-family: $font-en;
+    font-size: 0.8rem;
+    color: $HeaderColor;
+    font-weight: 600;
+}
+
+.text-input {
+    font-family: $font-en;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.line-border{
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0.3rem 0 0.3rem 0;
+}
+
+.invalid-feedback{
+    font-family: $font-en;
+    font-size: 0.65rem;
+    margin-bottom: -1rem;
+    font-weight: 400;
+}
+

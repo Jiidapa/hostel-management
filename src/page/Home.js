@@ -6,9 +6,11 @@ export default class Home extends Component {
     render() {
         return (
             <>
-                <Carousels />
-                <div className="container" style={{marginTop: '-3rem'}}>
-                    <SearchHostel/>
+                <div className="mb-5">
+                    <Carousels />
+                    <div className="container" style={{ marginTop: '-4rem' }}>
+                        <SearchHostel />
+                    </div>
                 </div>
             </>
         )

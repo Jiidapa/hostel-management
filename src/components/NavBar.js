@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import { NavLink, Link } from 'react-router-dom';
 import '../style/style.scss';
 import logo from '../images/logo.png';
 
@@ -7,25 +8,24 @@ export default class NavBar extends Component {
     render() {
         return (
             <div id="NavBar">
-                <Navbar bg="light" expand="lg" style={styles.bottomNavbar} className="py-1">
-                    <Navbar.Brand href="#home" className="text-navbar-brand">
-                        <img src={logo} alt="logo" style={{ width: '2.5rem' }} className="pr-2" />
-                        Hostel Management
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link</Nav.Link>
-                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                    </Navbar.Collapse>
+                <Navbar bg="light" sticky="top" variant="light" expand="lg" style={styles.bottomNavbar} className="py-1 row">
+                        <div className="col-6">
+                            <Navbar.Brand to="/">
+                                <Link to="/" className="text-navbar-brand">
+                                    <img src={logo} alt="logo" style={{ width: '2.5rem' }} className="pr-2" />
+                                    Hostel Management
+                                </Link>
+                            </Navbar.Brand>
+                        </div>
+                        <div className="col-6">
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                            <Navbar.Collapse id="basic-navbar-nav" className="float-right">
+                                <Nav className="mr-auto">
+                                    <NavLink to="/" className="nav-link">Home</NavLink>
+                                    <NavLink to="/register" className="nav-link">Register</NavLink>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </div>
                 </Navbar>
             </div>
         )
