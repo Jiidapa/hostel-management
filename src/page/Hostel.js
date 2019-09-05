@@ -6,6 +6,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 library.add(fab, fas);
 
@@ -48,11 +49,8 @@ class Hostel extends Component {
     }
 
     addBooking = (hostel, profile) => {
-        const item = {
-            name: hostel.name,
-            price: hostel.price,
-            amount: this.state.amountValue
-        }
+        let message = `การจองห้องสำเร็จ`
+        Swal.fire('Success', message)
     }
 
     render() {
@@ -93,23 +91,23 @@ class Hostel extends Component {
                                             <div className="row">
                                                 <div className="col-md-9">
                                                     <div className="row">
-                                                        <div className="col-md-12">
+                                                        <div className="col-md-12 text-detail-hostel">
                                                             {this.state.hostel.name}
                                                         </div>
                                                     </div>
                                                     <div className="row">
-                                                        <div className="col-md-12">
+                                                        <div className="col-md-12 text-detail-hostel-second">
                                                             <a className="text-link text-link-map" target="_blank" rel="noopener noreferrer" href={this.state.hostel.map} > {this.state.hostel.location}</a>
                                                         </div>
                                                     </div>
                                                     <div className="row">
-                                                        <div className="col-md-12">
-                                                            {this.props.available} ห้อง
+                                                        <div className="col-md-12 text-detail-hostel-second">
+                                                            {this.state.hostel.available} ห้อง
                                                         </div>
                                                     </div>
                                                     <div className="row">
-                                                        <div className="col-md-12">
-                                                            {this.state.hostel.price} บาท
+                                                        <div className="col-md-12 ">
+                                                            <span className="text-detail-hostel-price">฿{this.state.hostel.price}</span>
                                                         </div>
                                                     </div>
                                                 </div>

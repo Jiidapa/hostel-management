@@ -30,7 +30,6 @@ export default class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" className="float-right">
                         <Nav className="mr-auto">
-                            <NavLink to="/" className="nav-link">Home</NavLink>
                             {
                                 !this.state.isLogin && (
                                     <NavLink to="/register" className="nav-link">Register</NavLink>
