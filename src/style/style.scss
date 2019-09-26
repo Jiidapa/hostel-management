@@ -163,3 +163,19 @@
     font-weight: 400;
     font-size: 1.9rem;
 }
+
+.footer{
+    height: 50px;
+}
+
+footer {
+    flex-shrink: 0;
+    background: $primaryColor;
+    color: white;
+    line-height: 50px;
+    padding: 0 20px;
+    text-align: center;
+    font-family: $font-en;
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
